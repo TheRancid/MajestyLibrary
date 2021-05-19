@@ -1,0 +1,30 @@
+Property Page Wizard Instructions:
+
+La creazione e la modifica delle pagine delle proprietà è stata completata.
+
+Di seguito vengono indicate le operazioni necessarie per eseguire la verifica funzionale e il debug delle pagine delle proprietà e per renderle affidabili.
+
+A) Verifica funzionale e debug delle pagine delle proprietà.
+
+1)  La verifica funzionale delle pagine delle proprietà viene sempre eseguita in fase di progettazione. È necessario aggiungere un'istanza del controllo creato in un form di prova, come illustrato in "Debug dei controlli" nella Documentazione in linea.
+2)  Selezionare l'istanza del controllo creato e premere MAIUSC+F4 (oppure fare clic con il pulsante destro del mouse sul controllo e selezionare Proprietà dal menu di scelta rapida) per aprire la finestra di dialogo Pagine proprietà.
+3)  Le pagine delle proprietà del controllo verranno visualizzate nella finestra di dialogo Pagine proprietà. È possibile spostarsi tra le pagine per impostare le proprietà visualizzate. Verificare che quando si passa a un'altra pagina, le proprietà modificate vengano aggiornate nella finestra Proprietà.
+4)  È inoltre consigliabile eseguire la verifica funzionale delle pagine delle proprietà dopo aver selezionato più controlli. Per eseguire questa operazione, è sufficiente disegnare più istanze del controllo creato nel form di prova.
+5)  La finestra Pagine proprietà non è a scelta obbligatoria, pertanto le impostazioni possono essere modificate mentre la finestra è aperta. Per verificare questo tipo di situazione, è possibile selezionare e deselezionare altre istanze del controllo. Per selezionare o deselezionare un controllo, fare clic sul controllo tenendo premuto CTRL.
+6)  Se è stata utilizzata la finestra di dialogo Attributi routine per associare una pagina delle proprietà a una proprietà disponibile nella finestra Proprietà, è opportuno eseguire la verifica funzionale della pagina delle proprietà facendo clic sul pulsante con i tre puntini visualizzato accanto alla proprietà nella finestra Proprietà.
+
+B) Creazione di pagine delle proprietà affidabili e complete.
+
+Per le proprietà di tipo Enum (compresi gli Enum predefiniti di VB, ad esempio MousePointerConstants), sostituire la casella di testo generata dalla creazione guidata con un elenco a discesa, creare l'elenco dei nomi degli elementi e inserire nella routine dell'evento SelectionChanged il codice necessario per caricare l'elenco e per selezionare il valore corrente. Vedere il capitolo 10 e l'applicazione di esempio CtlPlus.vbg.
+Per le proprietà numeriche, è eventualmente possibile aggiungere nella routine dell'evento KeyPress il codice necessario per evitare l'immissione di valori non validi.
+Se una proprietà relativa ai colori viene dichiarata di tipo Long, è necessario scrivere una notevole quantità di codice per convalidare il valore di un colore immesso nella casella di testo. Per evitare questo problema, è possibile sostituire il tipo della proprietà con OLE_COLOR. In questo modo, infatti, il valore verrà associato automaticamente alla pagina dei colori standard.
+Determinare quali proprietà, tra quelle create, gli utenti potrebbero decidere di impostare sullo stesso valore per TUTTI i controlli selezionati contemporaneamente, nonché quelle che devono essere impostate solo per il primo controllo selezionato. Vedere l'applicazione di esempio CtlPlus.vbg.
+Se per alcuni campi gli utenti potrebbero specificare valori non validi, è necessario aggiungere il codice per l'intercettazione degli errori e la convalida nella routine dell'evento ApplyChanges. Se vengono immessi valori non validi, impostare Changed su True per evitare che la pagina delle proprietà venga chiusa. Vedere "Funzionamento delle pagine delle proprietà" nella Documentazione in linea.
+Impostare un flag a livello di modulo per evitare che durante il caricamento del valore iniziale delle proprietà (nella routine dell'evento SelectionChanged) tutte le proprietà vengano contrassegnate come "modificate". Vedere l'applicazione di esempio CtlPlus.vbg.
+
+Per informazioni dettagliate sulle pagine delle proprietà, vedere "Creazione di pagine delle proprietà per i controlli ActiveX" nella Documentazione in linea. Nella sezione delle procedure dettagliate in "Creazione di controlli ActiveX" è disponibile un esempio semplificato. Per un esempio di codice più complesso, vedere l'applicazione di esempio CtlPlus.vbg.
+
+È possibile salvare questo report facendo clic sul pulsante "Salva" oppure eliminarlo facendo clic su "Chiudi".
+
+
+

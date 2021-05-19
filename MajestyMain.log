@@ -1,0 +1,3 @@
+Riga 16: la classe MyPercentBar.usrPercentBar del controllo usrPercent non era una classe di controllo caricata.
+Riga 23: il nome della proprietà _ExtentX in usrPercent non è valido.
+Riga 24: il nome della proprietà _ExtentY in usrPercent non è valido.
